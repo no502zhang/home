@@ -1,27 +1,10 @@
 <div nz-row style="background: #ECECEC;padding:30px;">
-  <div nz-col nzSm="24" nzMd="12" nzLg="6">
-    <nz-card nz-col nzHoverable style="width:240px" [nzCover]="coverTemplate1">
-      <nz-card-meta nzTitle="面灰酵粑" nzDescription="油煎而成的酵粑, 又香又脆."></nz-card-meta>
+  <div nz-col nzSm="24" nzMd="12" nzLg="6" nzXl="4" nzXXl="3" *ngFor="let goods of goodsList">
+    <nz-card nz-col nzHoverable style="width:240px" [nzCover]="goodsPic">
+      <nz-card-meta nzTitle="{{goods.name}}" nzDescription="{{goods.remark}}"></nz-card-meta>
     </nz-card>
-    <ng-template #coverTemplate1>
-      <img alt="example" src="http://pi55u4lsq.bkt.clouddn.com/psb.jpg" />
+    <ng-template #goodsPic>
+      <img alt="{{goods.name}}" src="{{goods.picUrl}}" />
     </ng-template>
   </div>
-  <div nz-col nzSm="24" nzMd="12" nzLg="6">
-    <nz-card nz-col nzHoverable style="width:240px" [nzCover]="coverTemplate2">
-      <nz-card-meta nzTitle="辣炒鱿鱼" nzDescription="新鲜鱿鱼爆炒而成, 香脆弹牙."></nz-card-meta>
-    </nz-card>
-    <ng-template #coverTemplate2>
-      <img alt="example" src="http://pi55u4lsq.bkt.clouddn.com/IMG20141209121253.jpg" />
-    </ng-template>
-  </div>
-  <div nz-col nzSm="24" nzMd="12" nzLg="6">
-    <nz-card nz-col nzHoverable style="width:240px" [nzCover]="coverTemplate3">
-      <nz-card-meta nzTitle="香菜炒牛肉" nzDescription="鲜嫩的牛肉搭配香菜绝对是一道美味的菜肴."></nz-card-meta>
-    </nz-card>
-    <ng-template #coverTemplate3>
-      <img alt="example" src="http://pi55u4lsq.bkt.clouddn.com/IMG_20181029_221914.jpg" />
-    </ng-template>
-  </div>
-
 </div>

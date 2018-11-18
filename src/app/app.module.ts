@@ -21,6 +21,7 @@ registerLocaleData(zh);
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    SharedModule,
     AppRoutingModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
