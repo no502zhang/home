@@ -10,9 +10,7 @@ import { GoodsService } from '../shared/goods.service';
 })
 export class GoodsListComponent implements OnInit {
   goodsList: Goods[] = [];
-  nzTotal = 0;
-  nzPageIndex = 1;
-  nzPageSize = 10;
+  index = 1;
 
   constructor(private goodsService: GoodsService) { }
 
@@ -21,11 +19,9 @@ export class GoodsListComponent implements OnInit {
   }
 
   getGoodsList() {
-    this.goodsService.getGoodsList(this.nzPageIndex, this.nzPageSize).subscribe(page => {
+    this.goodsService.getGoodsList(this.index, 10).subscribe(page => {
       this.goodsList = page.list;
-      this.nzTotal = page.total;
-      this.nzPageIndex = page.pageNum;
-      this.nzPageSize = page.pageSize;
+      this.index = page.pageNum;
     })
   }
 }

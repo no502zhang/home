@@ -1,10 +1,9 @@
-<div nz-row style="background: #ECECEC;padding:30px;">
-  <div nz-col nzSm="24" nzMd="12" nzLg="6" nzXl="4" nzXXl="3" *ngFor="let goods of goodsList">
-    <nz-card nz-col nzHoverable style="width:240px" [nzCover]="goodsPic">
-      <nz-card-meta nzTitle="{{goods.name}}" nzDescription="{{goods.remark}}"></nz-card-meta>
-    </nz-card>
-    <ng-template #goodsPic>
-      <img alt="{{goods.name}}" src="{{goods.picUrl}}" />
-    </ng-template>
+<div class="container">
+  <div class="goods-info" *ngFor="let goods of goodsList">
+    <img class="goods-pic" alt="{{goods.name}}" src="{{goods.picUrl}}-mobile" />
+    <div>
+      <h3 class="goods-name">{{goods.name}}</h3>
+      <p class="goods-desc">{{goods.remark}}</p>
+    </div>
   </div>
 </div>
